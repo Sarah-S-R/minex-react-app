@@ -18,6 +18,8 @@ import './styles/Home.css';
 import './styles/index.css';
 
 
+// TODO: Look into ProtectedRoutes withn react router dom to render a different public page vs auth'ed page
+
 
 const App = () => {
   return (
