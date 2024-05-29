@@ -4,7 +4,6 @@ import Sidebar from '../components/Common/Sidebar';
 import Header from '../components/Common/Header'; 
 import Footer from '../components/Common/Footer';
 import Login from '../components/Auth/Login';
-import './Dashboard.css'; 
 
 const Dashboard = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);

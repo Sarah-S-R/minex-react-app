@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import './styles/dashstyles.css'; 
 import Sidebar from '../components/Common/Sidebar';
 import Header from '../components/Common/Header'; 
 import Footer from '../components/Common/Footer';
 
 const Locations = () => {
-  const history = useHistory();
 
   useEffect(() => {
     //  Google Maps
@@ -27,7 +24,8 @@ const Locations = () => {
     };
 
     window.initMap = initMap;
-    loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCPAP1GZvsgQ4MiTpXjokIbSKd9Ro3b2pI&libraries=places&callback=initMap');
+    // TODO: Hide API key using env var
+    loadScript('https://maps.googleapis.com/maps/api/js?key={TODO: ADD API KEY}&libraries=places&callback=initMap');
   }, []);
 
   // Functions for locations (addLabel, deleteAllLabels)

@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './styles/dashstyles.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import './node_modules/@fortawesome/fontawesome-free/css/all.min.css'; 
-import 'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined';
 import ReactDOM from 'react-dom';
-import { byPrefixAndName } from '@awesome.me/kit-KIT_CODE/icons';
 import Sidebar from '../components/Common/Sidebar';
 import Header from '../components/Common/Header'; 
 import Footer from '../components/Common/Footer';
-
-const element = <FontAwesomeIcon icon={byPrefixAndName.fas['house']} />
-
-ReactDOM.render(element, document.body)
 
 const Profile = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);

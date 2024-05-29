@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/dashstyles.css';  // Ensure this path matches your folder structure
 
 const Login = () => {
   const handleLogin = (e) => {

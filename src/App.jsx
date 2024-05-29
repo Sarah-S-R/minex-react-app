@@ -10,12 +10,12 @@ import Clients from './Dashboard/Clients';
 import Projects from './Dashboard/Projects';
 import Dashboard from './Dashboard/Dashboard';
 import Properties from './Dashboard/Properties';
-import Sidebar from '../components/Common/Sidebar';
-import Header from '../components/Common/Header'; 
-import Footer from '../components/Common/Footer';
-import './components/styles/dashstyles.css';
-import './components/styles/Home.css';
-import './components/styles/index.css';
+import Sidebar from './components/Common/Sidebar';
+import Header from './components/Common/Header'; 
+import Footer from './components/Common/Footer';
+import './styles/dashstyles.css';
+import './styles/Home.css';
+import './styles/index.css';
 
 
 

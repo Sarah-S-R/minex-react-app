@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import Sidebar from '../components/Common/Sidebar';
 import Header from '../components/Common/Header'; 
 import Footer from '../components/Common/Footer';
-import './styles/dashstyles.css';
 
 const Clients = () => {
   const [clients, setClients] = useState([]);
