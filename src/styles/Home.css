@@ -1,0 +1,47 @@
+/* src/components/Home/Home.css */
+.backgroundImage {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .heroSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .heroContent {
+    max-width: 600px;
+  }
+  
+  .img-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .getStartedBtn {
+    margin-top: 20px;
+  }
+  
