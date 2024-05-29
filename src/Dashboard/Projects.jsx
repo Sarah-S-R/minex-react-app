@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './styles/dashstyles.css'; // Adjust the path as needed
+import './styles/dashstyles.css';
+import '../components/Auth/Login';
+import Sidebar from '../components/Common/Sidebar';
+import Header from '../components/Common/Header'; 
+import Footer from '../components/Common/Footer';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);

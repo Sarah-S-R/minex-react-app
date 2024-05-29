@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/style.css';
+import './styles/Home.css';
 import 'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined';
+import './public/img'
+import './public/icons'
 
 const Home = () => {
   return (
     <div>
-      <img src="img/mountains.png" className="backgroundImage" alt="Background Image" />
+      <img src="./public/img/mountains.png" className="backgroundImage" alt="Background Image" />
 
       <header className="header" id="header">
         <nav className="navbar">
           <div className="logo">
             <Link to="/" className="logo" id="logo">
-              <img src="./icons/minex.png" alt="MinEx Logo" />MinEx
+              <img src="./public/icons/minex.png" alt="MinEx Logo" />MinEx
             </Link>
           </div>
           <div className="navbar-right">

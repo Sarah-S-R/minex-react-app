@@ -1,36 +1,24 @@
 // src/context/AuthContext.jsx
-import React, { createContext, useState, useContext } from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { createContext, useState } from 'react';
 
 export const AuthContext = createContext();
 
-const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
 
-  const login = () => {
-    setIsAuthenticated(true);
+  const login = (userData) => {
+    setUser(userData);
   };
 
   const logout = () => {
-    setIsAuthenticated(false);
+    setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const RequireAuth = ({ children }) => {
-  const { isAuthenticated } = useContext(AuthContext);
-
-  if (!isAuthenticated) {
-    return <Navigate to="/login" />;
-  }
-
-  return children;
-};
-
-export default AuthProvider;
 

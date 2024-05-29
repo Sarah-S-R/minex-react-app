@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import './styles/dashstyles.css'; // Adjust the path as needed
+import './styles/dashstyles.css'; 
+import Sidebar from '../components/Common/Sidebar';
+import Header from '../components/Common/Header'; 
+import Footer from '../components/Common/Footer';
 
 const Locations = () => {
   const history = useHistory();
 
   useEffect(() => {
-    // Load the Google Maps script
+    //  Google Maps
     const loadScript = (url) => {
       const script = document.createElement('script');
       script.src = url;
@@ -27,13 +30,13 @@ const Locations = () => {
     loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCPAP1GZvsgQ4MiTpXjokIbSKd9Ro3b2pI&libraries=places&callback=initMap');
   }, []);
 
-  // Functions for handling locations (addLabel, deleteAllLabels)
+  // Functions for locations (addLabel, deleteAllLabels)
   const addLabel = () => {
-    // Implement your logic here
+    // ADD here
   };
 
   const deleteAllLabels = () => {
-    // Implement your logic here
+    // ADD here
   };
 
   return (

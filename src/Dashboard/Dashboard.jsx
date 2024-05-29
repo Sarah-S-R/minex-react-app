@@ -1,8 +1,10 @@
-// src/components/Dashboard.jsx
+
 import React, { useState } from 'react';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import './Dashboard.css'; // Add this line to import your specific styles for Dashboard
+import Sidebar from '../components/Common/Sidebar';
+import Header from '../components/Common/Header'; 
+import Footer from '../components/Common/Footer';
+import Login from '../components/Auth/Login';
+import './Dashboard.css'; 
 
 const Dashboard = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);

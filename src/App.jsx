@@ -1,21 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Login from './components/Auth/Login';
 import Signup from './components/Auth/Signup';
 import ForgotPassword from './components/Auth/ForgotPassword';
-import Profile from './dashboard/Profile';
-import Locations from './dashboard/Locations';
-import Clients from './dashboard/Clients';
-import Projects from './dashboard/Projects';
-import Dashboard from './dashboard/Dashboard';
-import Properties from './dashboard/Properties';
-import Header from './components/common/Header';
-import Sidebar from './components/common/Sidebar';
-import Footer from './components/common/Footer';
-import './styles/dashstyles.css';
-import './styles/Home.css';
-import './styles/index.css';
+import Profile from './Dashboard/Profile';
+import Locations from './Dashboard/Locations';
+import Clients from './Dashboard/Clients';
+import Projects from './Dashboard/Projects';
+import Dashboard from './Dashboard/Dashboard';
+import Properties from './Dashboard/Properties';
+import Sidebar from '../components/Common/Sidebar';
+import Header from '../components/Common/Header'; 
+import Footer from '../components/Common/Footer';
+import './components/styles/dashstyles.css';
+import './components/styles/Home.css';
+import './components/styles/index.css';
+
+
 
 const App = () => {
   return (
@@ -23,18 +25,18 @@ const App = () => {
       <div className="App">
         <Header />
         <Sidebar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/forgot-password" component={ForgotPassword} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/locations" component={Locations} />
-          <Route path="/clients" component={Clients} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/properties" component={Properties} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/locations" element={<Locations />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/properties" element={<Properties />} />
+        </Routes>
         <Footer />
       </div>
     </Router>
@@ -42,6 +44,9 @@ const App = () => {
 }
 
 export default App;
+
+
+
 
 
 

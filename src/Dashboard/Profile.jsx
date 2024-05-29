@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/dashstyles.css';
+import './styles/dashstyles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css'; // Ensure you have the fontawesome library installed
+import './node_modules/@fortawesome/fontawesome-free/css/all.min.css'; 
 import 'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined';
-import ReactDOM from 'react-dom'
-import { byPrefixAndName } from '@awesome.me/kit-KIT_CODE/icons'
+import ReactDOM from 'react-dom';
+import { byPrefixAndName } from '@awesome.me/kit-KIT_CODE/icons';
+import Sidebar from '../components/Common/Sidebar';
+import Header from '../components/Common/Header'; 
+import Footer from '../components/Common/Footer';
 
 const element = <FontAwesomeIcon icon={byPrefixAndName.fas['house']} />
 
@@ -31,7 +34,7 @@ const Profile = () => {
           <span className="material-icons-outlined">{sidebarOpen ? 'close' : 'menu'}</span>
         </div>
         <div className="header-left">
-          <div id="datetime">{/* Container for date and time */}</div>
+          <div id="datetime">{/* date and time */}</div>
         </div>
         <div className="header-right">
           <div className="dropdown">
