@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/style.css';  // Adjust the path as necessary
+import '../../styles/dashstyles.css';  // Ensure this path matches your folder structure
 
 const Login = () => {
   const handleLogin = (e) => {
@@ -15,7 +15,7 @@ const Login = () => {
         <nav className="navbar">
           <div className="logo">
             <Link to="/" className="logo" id="logo">
-              <img src="./icons/minex.png" alt="MinEx Logo" /> MinEx
+              <img src="/icons/minex.png" alt="MinEx Logo" /> MinEx
             </Link>
           </div>
           <div className="navbar-right">
@@ -44,7 +44,7 @@ const Login = () => {
             <button type="submit" className="login-btn" id="login-btn">Login</button>
             <div className="remember-forgot">
               <label><input type="checkbox" id="rememberMe" /> Remember me</label>
-              <Link to="/forgotPassword">Reset password?</Link>
+              <Link to="/forgot-password">Reset password?</Link>
             </div>
             <div className="register-link">
               <Link to="/signup" className="login-form-link" id="login-form-reg-link">Create account</Link>
@@ -62,5 +62,7 @@ const Login = () => {
 };
 
 export default Login;
+
+
 
 

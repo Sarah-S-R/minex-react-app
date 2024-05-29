@@ -1,30 +1,49 @@
-// src/components/Header.js
-import React from 'react';
-import './Header.css'; // Add this line to import your specific styles for Header
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import 'material-icons/iconfont/material-icons.css'; // Ensure you have material-icons installed or include it in your HTML
 
-const Header = ({ openSidebar }) => {
-    return (
-        <header className="header">
-            <div className="menu-icon" onClick={openSidebar}>
-                <span className="material-icons-outlined">menu</span>
-            </div>
-            <div className="header-left">
-                <div id="datetime"></div> {/* Container for date and time */}
-            </div>
-            <div className="header-right">
-                <div className="dropdown">
-                    <a className="dropdown-toggle" href="#" />
-                </div>
-                <div className="dropdown">
-                    <a className="dropdown-toggle" href="./profile.html">
-                        <span className="material-icons-outlined userAccountCircle">account_circle</span>
-                    </a>
-                </div>
-            </div>
-        </header>
-    );
-};
+const Header = () => {
+  const [dateTime, setDateTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDateTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatDateTime = (date) => {
+    return date.toLocaleString();
+  };
+
+  return (
+    <header className="header">
+      <div className="menu-icon" onClick={() => console.log("Menu clicked")}>
+        <span className="material-icons">menu</span>
+      </div>
+      <div className="header-left">
+        <div id="datetime">{formatDateTime(dateTime)}</div>
+      </div>
+      <div className="header-right">
+        <div className="dropdown">
+          <a className="dropdown-toggle" href="#">
+            {/* Add dropdown content here */}
+          </a>
+        </div>      
+        <div className="dropdown">
+          <Link to="/profile" className="dropdown-toggle">
+            <span className="material-icons">account_circle</span>
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+}
 
 export default Header;
+
+
+
 
 

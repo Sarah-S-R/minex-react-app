@@ -1,15 +1,11 @@
-// src/main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './styles/style.css';
-import AuthProvider from './context/AuthContext';
+import './styles/index.css'; // Ensure this path matches your folder structure
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

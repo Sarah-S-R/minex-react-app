@@ -4,18 +4,25 @@ import Home from './Home';
 import Login from './components/Auth/Login';
 import Signup from './components/Auth/Signup';
 import ForgotPassword from './components/Auth/ForgotPassword';
-import Profile from './Dasboard/Profile';
-import Locations from './Dasboard/Locations';
-import Clients from './Dasboard/Clients';
-import Projects from './Dasboard/Projects'; // Import the Projects component
-import Dashboard from './components/Dashboard'; // Import the Dashboard component
-import './components/styles/dashstyles.css';  // Adjust the path according to your project structure
-import './components/styles/Home.css';
+import Profile from './dashboard/Profile';
+import Locations from './dashboard/Locations';
+import Clients from './dashboard/Clients';
+import Projects from './dashboard/Projects';
+import Dashboard from './dashboard/Dashboard';
+import Properties from './dashboard/Properties';
+import Header from './components/common/Header';
+import Sidebar from './components/common/Sidebar';
+import Footer from './components/common/Footer';
+import './styles/dashstyles.css';
+import './styles/Home.css';
+import './styles/index.css';
 
 const App = () => {
   return (
     <Router>
       <div className="App">
+        <Header />
+        <Sidebar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
@@ -25,14 +32,18 @@ const App = () => {
           <Route path="/locations" component={Locations} />
           <Route path="/clients" component={Clients} />
           <Route path="/projects" component={Projects} />
-          <Route path="/dashboard" component={Dashboard} /> {/* Add this route */}
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/properties" component={Properties} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
 }
 
 export default App;
+
+
 
 
 

@@ -1,47 +1,55 @@
-// src/components/Sidebar.js
 import React from 'react';
-import './Sidebar.css'; // Add this line to import your specific styles for Sidebar
+import { Link } from 'react-router-dom';
+import 'material-icons/iconfont/material-icons.css'; // Ensure you have material-icons installed or included in your HTML
 
-const Sidebar = ({ closeSidebar }) => {
-    return (
-        <aside id="sidebar">
-            <div className="sidebar-title">
-                <div className="sidebar-brand">
-                    <span className="logoIcon"><img src="./icons/minex.png" alt="MinEx Logo" />MinEx</span>
-                </div>
-                <div className="close-icon" onClick={closeSidebar}>
-                    <span className="material-icons-outlined">close</span>
-                </div>
-            </div>
-            <ul className="sidebar-list">
-                <li className="sidebar-list-item">
-                    <a href="./dashboard.html">
-                        <span className="material-icons-outlined">dashboard</span>Dashboard
-                    </a>
-                </li>
-                <li className="sidebar-list-item">
-                    <a href="./clients.html">
-                        <span className="material-icons-outlined">groups</span>Clients
-                    </a>
-                </li>
-                <li className="sidebar-list-item">
-                    <a href="./projects.html">
-                        <span className="material-icons-outlined">inventory_2</span>Projects
-                    </a>
-                </li>
-                <li className="sidebar-list-item">
-                    <a href="./locations.html">
-                        <span className="material-icons-outlined">map</span>Locations
-                    </a>
-                </li>
-                <li className="sidebar-list-item">
-                    <a href="./index.html" className="logout">
-                        <span className="material-icons-outlined">logout</span>Log Out
-                    </a>
-                </li>
-            </ul>
-        </aside>
-    );
-};
+const Sidebar = () => {
+  return (
+    <aside id="sidebar">
+      <div className="sidebar-title">
+        <div className="sidebar-brand">
+          <span className="logoIcon">
+            <img src="/icons/minex.png" alt="MinEx Logo" />MinEx
+          </span>
+        </div>
+        <div className="close-icon" onClick={() => console.log("Close clicked")}>
+          <span className="material-icons">close</span>
+        </div>
+      </div>
+      <ul className="sidebar-list">
+        <li className="sidebar-list-item">
+          <Link to="/dashboard">
+            <span className="material-icons">dashboard</span>Dashboard
+          </Link>
+        </li>
+        <li className="sidebar-list-item">
+          <Link to="/clients">
+            <span className="material-icons">groups</span>Clients
+          </Link>
+        </li>
+        <li className="sidebar-list-item">
+          <Link to="/projects">
+            <span className="material-icons">inventory_2</span>Projects
+          </Link>
+        </li>
+        <li className="sidebar-list-item">
+          <Link to="/locations">
+            <span className="material-icons">map</span>Locations
+          </Link>
+        </li>
+        <li className="sidebar-list-item">
+          <Link to="/properties">
+            <span className="material-icons">home</span>Properties
+          </Link>
+        </li>
+        <li className="sidebar-list-item">
+          <Link to="/login" className="logout">
+            <span className="material-icons">logout</span> Log Out
+          </Link>
+        </li>
+      </ul>
+    </aside>
+  );
+}
 
 export default Sidebar;
+

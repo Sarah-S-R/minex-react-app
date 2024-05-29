@@ -5,6 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css'; // Ensure you have the fontawesome library installed
 import 'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined';
+import ReactDOM from 'react-dom'
+import { byPrefixAndName } from '@awesome.me/kit-KIT_CODE/icons'
+
+const element = <FontAwesomeIcon icon={byPrefixAndName.fas['house']} />
+
+ReactDOM.render(element, document.body)
 
 const Profile = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
