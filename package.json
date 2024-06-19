@@ -10,8 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontawesome/fontawesome-svg-core": "^6.5.2",
-    "@fontawesome/react-fontawesome": "^0.2.2",
     "material-icons": "^1.13.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
