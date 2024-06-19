@@ -1,11 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/AuthProvider';
 
 const Login = () => {
+
+  const { setUserName } = useAuth()
+  const [ email, setEmail ] = useState("")
+
+  const navigate = useNavigate();
+
   const handleLogin = (e) => {
     e.preventDefault();
-    // Add your authentication logic here
-    // Example: navigate('/dashboard');
+    setUserName(email)
+    navigate('/dashboard');
   };
 
   return (
@@ -32,7 +39,20 @@ const Login = () => {
             <span className="error-message"></span>
             <div className="input-group">
               <span></span>
-              <input type="text" className="input" id="email" placeholder="Enter email..." autoComplete="email" required />
+              <input 
+                type="text" 
+                className="input" 
+                id="email"
+                value={email}
+                onChange={
+                  (e) => {
+                    setEmail(e.target.value)
+                  }
+                }
+                placeholder="Enter email..." 
+                autoComplete="email" 
+                required 
+              />
               <span className="error-message"></span>
             </div>
             <div className="input-group">
