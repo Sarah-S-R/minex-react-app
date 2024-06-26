@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import 'material-icons/iconfont/material-icons.css'; // Ensure you have material-icons installed or include it in your HTML
+
 
 const Header = () => {
   const [dateTime, setDateTime] = useState(new Date());

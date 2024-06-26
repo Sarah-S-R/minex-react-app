@@ -1,8 +1,9 @@
-import React from 'react';
+
+import React from 'react'
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
-  const handleSignup = (e) => {
+  const handleSignup = (e: React.SyntheticEvent) => {
     e.preventDefault();
     // Add your signup logic here
   };

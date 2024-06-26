@@ -1,32 +1,29 @@
-import React, { useEffect } from 'react';
-import Sidebar from '../components/Common/Sidebar';
-import Header from '../components/Common/Header'; 
-import Footer from '../components/Common/Footer';
+
 
 const Locations = () => {
 
-  useEffect(() => {
-    //  Google Maps
-    const loadScript = (url) => {
-      const script = document.createElement('script');
-      script.src = url;
-      script.async = true;
-      script.defer = true;
-      document.body.appendChild(script);
-    };
+  // useEffect(() => {
+  //   //  Google Maps
+  //   const loadScript = (url: string) => {
+  //     const script = document.createElement('script');
+  //     script.src = url;
+  //     script.async = true;
+  //     script.defer = true;
+  //     document.body.appendChild(script);
+  //   };
 
-    // Initialize Google Maps
-    const initMap = () => {
-      const map = new window.google.maps.Map(document.getElementById('map'), {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8,
-      });
-    };
+  //   // Initialize Google Maps
+  //   const initMap = () => {
+  //     const map: any = new window.google.maps.Map(document.getElementById('map'), {
+  //       center: { lat: -34.397, lng: 150.644 },
+  //       zoom: 8,
+  //     });
+  //   };
 
-    window.initMap = initMap;
-    // TODO: Hide API key using env var
-    loadScript('https://maps.googleapis.com/maps/api/js?key={TODO: ADD API KEY}&libraries=places&callback=initMap');
-  }, []);
+  //   window && window.initMap = initMap;
+  //   // TODO: Hide API key using env var
+  //   loadScript('https://maps.googleapis.com/maps/api/js?key={TODO: ADD API KEY}&libraries=places&callback=initMap');
+  // }, []);
 
   // Functions for locations (addLabel, deleteAllLabels)
   const addLabel = () => {

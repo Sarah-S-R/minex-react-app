@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/AuthProvider';
+import PublicHeader from '../Common/PublicHeader';
 
 const Login = () => {
 
@@ -9,7 +10,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = (e: React.SyntheticEvent) => {
     e.preventDefault();
     setUserName(email)
     navigate('/dashboard');
@@ -17,21 +18,9 @@ const Login = () => {
 
   return (
     <div>
-      <header className="header" id="header">
-        <nav className="navbar">
-          <div className="logo">
-            <Link to="/" className="logo" id="logo">
-              <img src="/icons/minex.png" alt="MinEx Logo" /> MinEx
-            </Link>
-          </div>
-          <div className="navbar-right">
-            <ul>
-              <li><Link to="/login" id="login">Login</Link></li>
-              <li><Link to="/signup" id="signup">Signup</Link></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      
+      <PublicHeader />
+
       <div className="main-login-body" id="main-login-body">
         <div className="login-container" id="login-container">
           <form onSubmit={handleLogin} className="login-form" id="login-form">

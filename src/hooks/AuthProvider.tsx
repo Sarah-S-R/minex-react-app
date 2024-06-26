@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from 'react'
 
 interface AuthProps {
     username?: string,
-    setUserName: React.Dispatch<React.SetStateAction<string>>;
+    setUserName: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
 const AuthContext = createContext<AuthProps>({

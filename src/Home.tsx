@@ -1,27 +1,13 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
+import './styles/Home.css'
+import PublicHeader from './components/Common/PublicHeader';
 
 const Home = () => {
   return (
-    <div>
+    <>
       <img src="/img/mountains.png" className="backgroundImage" alt="Background Image" />
-
-      <header className="header" id="header">
-        <nav className="navbar">
-          <div className="logo">
-            <Link to="/" className="logo" id="logo">
-              <img src="/icons/minex.png" alt="MinEx Logo" />MinEx
-            </Link>
-          </div>
-          <div className="navbar-right">
-            <ul>
-              <li><Link to="/login" id="login">Login</Link></li>
-              <li><Link to="/signup" id="signup">Signup</Link></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-
+      <PublicHeader />
       <div className="heroSection">
         <div className="heroContent" id="heroContent">
           <h1>Empower Your Exploration Efforts with MinEx CRM</h1>
@@ -50,13 +36,13 @@ const Home = () => {
             </div>
           </div>
           <div className="getStartedBtn">
-            <Link to="/signup" id="signup">
+            <Link to="/signup" className='link' id="signup">
               <button className="getStarted" type="button" id="getStarted">Get Started</button>
             </Link>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

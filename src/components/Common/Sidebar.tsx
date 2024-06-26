@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import 'material-icons/iconfont/material-icons.css'; // Ensure you have material-icons installed or included in your HTML
 

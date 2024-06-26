@@ -1,4 +1,5 @@
-import React from 'react';
+
+import { ErrorBoundary } from 'react-error-boundary';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,9 +14,6 @@ import Clients from './Dashboard/Clients';
 import Projects from './Dashboard/Projects';
 import Dashboard from './Dashboard/Dashboard';
 import Properties from './Dashboard/Properties';
-import Sidebar from './components/Common/Sidebar';
-import Header from './components/Common/Header'; 
-import Footer from './components/Common/Footer';
 import './styles/dashstyles.css';
 import './styles/Home.css';
 import './styles/index.css';
@@ -23,10 +21,7 @@ import './styles/index.css';
 import AuthProvider from './hooks/AuthProvider';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
 
-// TODO: Check out your ESLInt config, package imports seem to be broken
-
 // TODO: Routing -> ensure all app routing uses react-router-dom patterns and hooks
-// TODO: Routing -> set up Protected Routes for working with Auth
 
 // TODO: Styling -> Ensure CSS styles are applied as expected in all components & refactor as needed
 // TODO: Styling -> Revisit core layout of application, ensure components are structured as expeted across views
@@ -102,31 +97,19 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <AuthProvider>
-      {/* <Router> */}
-        {/* <div className="App"> */}
-          {/* <Header /> */}
-          {/* <Sidebar /> */}
-          <RouterProvider router={router} />
-          {/* <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/locations" element={<Locations />} />
-            <Route path="/clients" element={<Clients />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/properties" element={<Properties />} />
-          </Routes> */}
-          {/* <Footer /> */}
-        {/* </div> */}
-      {/* </Router> */}
+        <ErrorBoundary
+          fallback={<p>Sorry, something went wrong</p>}
+        >
+          <div id='main'>
+            <RouterProvider router={router} />
+          </div>
+        </ErrorBoundary>
     </AuthProvider>
   );
 }
 
 export default App;
+
 
 
 

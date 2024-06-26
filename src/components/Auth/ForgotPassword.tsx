@@ -1,24 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+
+import PublicHeader from '../Common/PublicHeader';
 
 const ForgotPassword = () => {
   return (
     <div>
-      <header className="header" id="header">
-        <nav className="navbar">
-          <div className="logo">
-            <Link to="/" className="logo" id="logo">
-              <img src="/icons/minex.png" alt="MinEx Logo" /> MinEx
-            </Link>
-          </div>
-          <div className="navbar-right">
-            <ul>
-              <li><Link to="/login" id="login">Login</Link></li>
-              <li><Link to="/signup" id="signup">Signup</Link></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      <PublicHeader />
       <div className="main-reset-body" id="main-reset-body">
         <div className="password-reset-container">
           <form className="reset-password-form" id="reset-password-form" action="./reset-password" method="post">
