@@ -1,25 +1,38 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Sidebar from '../components/Common/Sidebar';
 import Header from '../components/Common/Header'; 
-import Footer from '../components/Common/Footer';
-import Login from '../components/Auth/Login';
 
 const Dashboard = () => {
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(true);
 
     const openSidebar = () => {
+        handleToggleSidebar()
         setSidebarOpen(true);
     };
 
     const closeSidebar = () => {
+        handleToggleSidebar()
         setSidebarOpen(false);
     };
 
+    const handleToggleSidebar = () => {
+        const grid_container = document.getElementById('db-sb-container')
+
+        if (!grid_container) return null;
+
+        grid_container.style.gridTemplateAreas = 
+            sidebarOpen ? 
+            `"header header header header" "main main main main"`
+            :
+            `"sidebar header header header" "sidebar main main main"`;
+
+    }
+
     return (
-        <div className="grid-container">
-            <Header openSidebar={openSidebar} />
-            {sidebarOpen && <Sidebar closeSidebar={closeSidebar} />}
+        <div className="grid-container" id="db-sb-container">
+            <Header openSidebar={openSidebar} sidebarOpen={sidebarOpen}/>
+            { sidebarOpen && <Sidebar closeSidebar={closeSidebar} /> }
             <main className="main-container">
                 <div className="main-title">
                     <h2>DASHBOARD</h2>

@@ -2,7 +2,11 @@
 import { Link } from 'react-router-dom';
 import 'material-icons/iconfont/material-icons.css'; // Ensure you have material-icons installed or included in your HTML
 
-const Sidebar = () => {
+const Sidebar = ({
+  closeSidebar
+}:{
+  closeSidebar: () => void
+}) => {
   return (
     <aside id="sidebar">
       <div className="sidebar-title">
@@ -11,7 +15,7 @@ const Sidebar = () => {
             <img src="/icons/minex.png" alt="MinEx Logo" />MinEx
           </span>
         </div>
-        <div className="close-icon" onClick={() => console.log("Close clicked")}>
+        <div className="close-icon" onClick={() => closeSidebar()}>
           <span className="material-icons">close</span>
         </div>
       </div>

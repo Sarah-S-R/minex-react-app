@@ -698,7 +698,7 @@ i{
 /* Medium <= 992px */
 
 @media screen and (max-width: 992px) {
-    .grid-container {
+    /* .grid-container {
       grid-template-columns: 1fr;
       grid-template-rows: 0.2fr 3fr;
       grid-template-areas:
@@ -716,7 +716,7 @@ i{
   
     .sidebar-title > span {
       display: inline;
-    }
+    } */
 
     
 #newPersonModal, #newProjectModal {
